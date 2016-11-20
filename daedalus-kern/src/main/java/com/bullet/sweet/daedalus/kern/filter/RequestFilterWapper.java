@@ -33,9 +33,9 @@ public class RequestFilterWapper implements Filter<RequestContext> {
         private Filter<RequestContext> current;
 
         public RequestFilters(Iterable<Filter> filterIterator) {
-            filterIterator.forEach(filter->{
-                current = new LinkedFilter(current, filter);
-            });
+            filterIterator.forEach(filter->
+                current = new LinkedFilter(current, filter)
+            );
         }
 
         @Override
