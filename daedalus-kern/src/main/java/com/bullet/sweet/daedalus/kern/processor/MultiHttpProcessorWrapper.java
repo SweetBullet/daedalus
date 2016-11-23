@@ -6,7 +6,7 @@ import javax.annotation.PostConstruct;
 import java.util.List;
 
 /**
- * Created by pudongxu on 16/11/23.
+ * Created by zhanlan on 16/11/23.
  */
 public class MultiHttpProcessorWrapper implements HttpProcessor {
 

@@ -3,7 +3,7 @@ package com.bullet.sweet.daedalus.kern.processor;
 import lombok.AllArgsConstructor;
 
 /**
- * Created by pudongxu on 16/11/23.
+ * Created by zhanlan on 16/11/23.
  */
 @AllArgsConstructor
 public class MultiHttpProcessor implements HttpProcessor {
