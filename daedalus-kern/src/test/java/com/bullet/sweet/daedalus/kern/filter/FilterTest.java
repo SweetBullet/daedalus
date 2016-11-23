@@ -1,4 +1,4 @@
-package com.bullet.sweet.kern.filter;
+package com.bullet.sweet.daedalus.kern.filter;
 
 import org.junit.Test;
 

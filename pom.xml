@@ -12,6 +12,7 @@
         <module>daedalus-dao</module>
         <module>daedalus-base</module>
         <module>daedalus-kern</module>
+        <module>daedalus-deploy</module>
     </modules>
 
     <properties>

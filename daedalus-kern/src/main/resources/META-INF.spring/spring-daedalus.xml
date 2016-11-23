@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:component-scan base-package="com.bullet.sweet.daedalus"/>
+    <context:property-placeholder location="classpath*:**/*.properties" ignore-unresolvable="true"/>
+
+    <bean id="applicationInitializer" class="com.bullet.sweet.daedalus.kern.ApplicationInitializer" init-method="init">
+        <property name="can" value="${daedalus.can}"/>
+    </bean>
+
+
+    <bean id="routerInitializer" class="com.bullet.sweet.daedalus.kern.router.RouterInitializer">
+        <property name="healthChecker" ref="healthChecker"/>
+        <property name="port" value="${daedalus.port}"/>
+        <property name="processor" ref="multiHttpProcessorWrapper"/>
+        <property name="vertx" ref="vertx"/>
+    </bean>
+
+    <bean id="multiHttpProcessorWrapper" class="com.bullet.sweet.daedalus.kern.processor.MultiHttpProcessorWrapper">
+        <property name="aspectProcessors">
+            <list>
+                <bean id="p1" class="com.bullet.sweet.daedalus.kern.processor.AsyncProcessor"/>
+                <bean id="p2" class="com.bullet.sweet.daedalus.kern.processor.AuthProcessor"/>
+            </list>
+        </property>
+    </bean>
+
+
+    <bean id="healthChecker" class="com.bullet.sweet.daedalus.kern.HealthChecker"/>
+
+    <!--整个应用只允许有一个vertex-->
+    <bean id="vertx" factory-bean="vertexFactory" factory-method="build"/>
+    <bean id="vertexFactory" class="com.bullet.sweet.daedalus.kern.VertxFactory"/>
+</beans>

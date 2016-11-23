@@ -1,6 +1,8 @@
 package com.bullet.sweet.daedalus.kern.processor;
 
 import lombok.Setter;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.annotation.PostConstruct;
 import java.util.List;
@@ -10,6 +12,8 @@ import java.util.List;
  */
 public class MultiHttpProcessorWrapper implements HttpProcessor {
 
+    private final static Logger logger = LoggerFactory.getLogger(MultiHttpProcessorWrapper.class);
+
     @Setter
     private List<HttpAspectProcessor> aspectProcessors;
 
@@ -17,6 +21,7 @@ public class MultiHttpProcessorWrapper implements HttpProcessor {
 
     @PostConstruct
     public void init() {
+        logger.info("MultiHttpProcessorWrapper init");
         wrapped = new WrappedHttpProcessor(aspectProcessors, ctx -> {
             ctx.getResponse().close();
         });

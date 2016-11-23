@@ -8,14 +8,14 @@ import lombok.Data;
 @Data
 public class HealthChecker {
 
-    private volatile boolean isServerd;
+    private volatile boolean isServed;
 
     public void online() {
-        this.isServerd = true;
+        this.isServed = true;
     }
 
     public void offline() {
-        this.isServerd = false;
+        this.isServed = false;
     }
 
 }

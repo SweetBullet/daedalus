@@ -21,7 +21,6 @@ public class RouterInitializer {
 
     private final static Logger logger = LoggerFactory.getLogger(RouterInitializer.class);
 
-
     @Setter
     private Vertx vertx;
     @Setter
@@ -32,11 +31,12 @@ public class RouterInitializer {
     private HealthChecker healthChecker;
 
 
-    public void inti() {
+    public void init() {
         Router router = Router.router(vertx);
         router.route().handler(BodyHandler.create());
-        router.patch("/path").handler(ctx -> {
+        router.route().path("/path").handler(ctx -> {
             String body = ctx.getBodyAsString(Constants.DEFAULT_CHARSET.name());
+            logger.info("receive a request,method:{},body:{}", ctx.request().rawMethod(), body);
             processor.process(new HttpContext(ctx.request(), ctx.response(), body));
         });
         router.route("/_HB_").handler(ctx -> {
@@ -53,14 +53,17 @@ public class RouterInitializer {
                 ctx.response().setStatusCode(200).end("");
                 return;
             }
-            if (!healthChecker.isServerd()) {
+            if (!healthChecker.isServed()) {
                 ctx.response().setStatusCode(400).end("");
                 return;
             }
 
         });
+        port = (port == 0) ? 8888 : port;
         vertx.createHttpServer().requestHandler(router::accept).listen(port);
         logger.info("daedalus start at port:{}!", port);
 
     }
+
+
 }
