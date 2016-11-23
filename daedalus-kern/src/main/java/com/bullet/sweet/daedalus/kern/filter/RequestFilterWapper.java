@@ -1,6 +1,5 @@
 package com.bullet.sweet.daedalus.kern.filter;
 
-import com.bullet.sweet.daedalus.kern.RequestContext;
 import lombok.Setter;
 
 import javax.annotation.PostConstruct;
