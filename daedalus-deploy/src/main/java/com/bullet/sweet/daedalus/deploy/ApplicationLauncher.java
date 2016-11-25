@@ -12,9 +12,15 @@ public class ApplicationLauncher {
     private final static Logger logger = LoggerFactory.getLogger(ApplicationLauncher.class);
 
     public static void main(String[] args) throws Exception {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
-                new String[]{"classpath*:*/spring-daedalus.xml"});
-        context.start();
-        System.in.read(); // 为保证服务一直开着，利用输入流的阻塞来模拟
+        logger.info("main method");
+        try {
+
+            ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
+                    new String[]{"classpath:spring/spring-daedalus.xml"});
+            context.start();
+            logger.info("start!");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

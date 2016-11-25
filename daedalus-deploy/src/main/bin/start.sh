@@ -5,7 +5,7 @@ base_path=`pwd`
 
 JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home"
 JAVA_OPTS="-Duser.timezone=GMT+8 -server -Xms2048m -Xmx2048m -Djava.awt.headless=true -Djava.net.preferIPv4Stack=true -Dfile.encoding=UTF-8"
-#APP_HOME=~/workplace/test/provider-1.0-SNAPSHOT/
+#APP_HOME=/Users/sweetbullet/workplace/test/daedalus-deploy-1.0-SNAPSHOT
 APP_MAIN=com.bullet.sweet.daedalus.deploy.ApplicationLauncher
 
 echo 'base_path:'${base_path}
@@ -19,7 +19,7 @@ CLASSPATH="$base_path/conf:$CLASSPATH"
 tradePortalPID=0
 
 getTradeProtalPID(){
-    javaps=`$JAVA_HOME/bin/jps -l | grep $APP_MAIN`
+    javaps=`$J{AVA_HOME}/bin/jps -l | grep $APP_MAIN`
     if [ -n "$javaps" ]; then
         tradePortalPID=`echo $javaps | awk '{print $1}'`
     else
@@ -35,11 +35,11 @@ startup(){
         echo "================================================================================================================"
     else
         echo -n "Starting $APP_MAIN"
-        $JAVA_HOME/bin/java $JAVA_OPTS -classpath $CLASSPATH $APP_MAIN
-        getTradeProtalPID
-        if [ $tradePortalPID -ne 0 ]; then
+        ${JAVA_HOME}/bin/java ${JAVA_OPTS} -classpath ${CLASSPATH} ${APP_MAIN}
+        if [ ${tradePortalPID} -ne 0 ]; then
+            echo ${tradePortalPID} > ${base_path}/bin/service.txt
             echo "(PID=$tradePortalPID)...[Success]"
-           echo "================================================================================================================"
+            echo "================================================================================================================"
         else
             echo "[Failed]"
             echo "================================================================================================================"

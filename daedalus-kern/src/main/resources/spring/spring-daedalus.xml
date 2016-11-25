@@ -6,6 +6,7 @@
 
     <context:component-scan base-package="com.bullet.sweet.daedalus"/>
     <context:property-placeholder location="classpath*:**/*.properties" ignore-unresolvable="true"/>
+    <!--<context:property-placeholder location="classpath*:**/*.properties"/>-->
 
     <bean id="applicationInitializer" class="com.bullet.sweet.daedalus.kern.ApplicationInitializer" init-method="init">
         <property name="can" value="${daedalus.can}"/>

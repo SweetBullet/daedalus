@@ -13,23 +13,23 @@
 
 
     <!--本地日志-->
-    <appender name="BUSINESS" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <File>${LOG_PATH}/vanguard.log</File>
-        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <!-- rollover daily -->
-            <fileNamePattern>${LOG_PATH}/%d{yyyy-MM-dd}/vanguard-%d{yyyy-MM-dd}-%i.log.gz
-            </fileNamePattern>
-            <timeBasedFileNamingAndTriggeringPolicy
-                    class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
-                <!-- or whenever the file size reaches 100MB -->
-                <maxFileSize>100MB</maxFileSize>
-            </timeBasedFileNamingAndTriggeringPolicy>
-            <maxHistory>10</maxHistory>
-        </rollingPolicy>
-        <encoder>
-            <pattern>${LOG_PATTERN}</pattern>
-        </encoder>
-    </appender>
+    <!--<appender name="BUSINESS" class="ch.qos.logback.core.rolling.RollingFileAppender">-->
+        <!--<File>${LOG_PATH}/vanguard.log</File>-->
+        <!--<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">-->
+            <!--&lt;!&ndash; rollover daily &ndash;&gt;-->
+            <!--<fileNamePattern>${LOG_PATH}/%d{yyyy-MM-dd}/vanguard-%d{yyyy-MM-dd}-%i.log.gz-->
+            <!--</fileNamePattern>-->
+            <!--<timeBasedFileNamingAndTriggeringPolicy-->
+                    <!--class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">-->
+                <!--&lt;!&ndash; or whenever the file size reaches 100MB &ndash;&gt;-->
+                <!--<maxFileSize>100MB</maxFileSize>-->
+            <!--</timeBasedFileNamingAndTriggeringPolicy>-->
+            <!--<maxHistory>10</maxHistory>-->
+        <!--</rollingPolicy>-->
+        <!--<encoder>-->
+            <!--<pattern>${LOG_PATTERN}</pattern>-->
+        <!--</encoder>-->
+    <!--</appender>-->
 
 
 
