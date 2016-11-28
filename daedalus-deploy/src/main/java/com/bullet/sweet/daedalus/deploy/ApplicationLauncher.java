@@ -14,7 +14,6 @@ public class ApplicationLauncher {
     public static void main(String[] args) throws Exception {
         logger.info("main method");
         try {
-
             ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
                     new String[]{"classpath:spring/spring-daedalus.xml"});
             context.start();

@@ -10,7 +10,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Created by zhanlan on 16/11/21.
+ * Created by Zhanlan on 16/11/21.
  */
 @AllArgsConstructor
 public class HttpContext {

@@ -9,7 +9,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 
 /*****************************************************
- * Created by zhanlan on 16/11/20.
+ * Created by Zhanlan on 16/11/20.
  * If there are more than one service in this project,
  * it can choose which one to start-up
  * (use in deploying)

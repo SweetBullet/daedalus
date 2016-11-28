@@ -4,7 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * Created by zhanlan on 16/11/23.
+ * Created by Zhanlan on 16/11/23.
  */
 public class AuthProcessor implements HttpAspectProcessor {
 

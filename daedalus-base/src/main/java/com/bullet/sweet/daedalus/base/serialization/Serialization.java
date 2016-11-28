@@ -5,7 +5,7 @@ import java.io.OutputStream;
 import java.lang.reflect.Type;
 
 /**
- * Created by zhanlan on 16/11/20.
+ * Created by Zhanlan on 16/11/20.
  */
 public interface Serialization {
 

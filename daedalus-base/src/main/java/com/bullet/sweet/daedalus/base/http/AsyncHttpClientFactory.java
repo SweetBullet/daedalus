@@ -13,7 +13,7 @@ import org.apache.http.impl.nio.reactor.IOReactorConfig;
 import java.io.IOException;
 
 /**
- * @author mozhu
+ * @author Zhanlan
  *
  */
 public class AsyncHttpClientFactory {

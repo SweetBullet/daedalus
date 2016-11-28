@@ -10,7 +10,7 @@ import java.lang.reflect.Type;
 import java.time.Instant;
 
 /**
- * Created by leduo on 16/11/7.
+ * Created by Zhanlan on 16/11/7.
  */
 public class GsonSerialization implements Serialization {
 
