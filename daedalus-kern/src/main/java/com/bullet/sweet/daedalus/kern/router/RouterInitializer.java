@@ -16,7 +16,9 @@ import org.slf4j.LoggerFactory;
 
 /**
  * Created by Zhanlan on 16/11/20.
- */
+ * init vertx web server
+ **/
+
 public class RouterInitializer {
 
     private final static Logger logger = LoggerFactory.getLogger(RouterInitializer.class);

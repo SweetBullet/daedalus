@@ -17,7 +17,7 @@ public class WechatApiTest {
 
     @Test
     public void testSendMsg() {
-        this.send("nihao","hello");
+        this.send("nihao", "hello");
         Map<String, Object> map = new HashMap<>();
         map.put("1", "a");
         map.put("2", "b");
@@ -28,12 +28,30 @@ public class WechatApiTest {
     }
 
     private void send(String... content) {
-        logger.info("content:{}",content);
+        logger.info("content:{}", content);
     }
 
-    private String map2JsonString(Map<String,Object> map) {
+    private String map2JsonString(Map<String, Object> map) {
         Gson gson = new Gson();
         return gson.toJson(map, Map.class);
+    }
+
+
+    @Test
+    public void test() {
+        int i = 65535;
+        byte[] b = new byte[4];
+        b[3] = (byte) (0xff & (i >>> 0));
+        b[2] = (byte) (0xff & (i >>> 8));
+        b[1] = (byte) (0xff & (i >>> 16));
+        b[0] = (byte) (0xff & (i >>> 24));
+        for (int j = 0; j < 4; j++) {
+            System.out.println(b[j]);
+        }
+        int i1 = b[3] + (b[2] << 8) + (b[1] << 16) + (b[0] << 24);
+        System.out.println(i1);
+
+
     }
 
 }

@@ -35,4 +35,9 @@
     <!--整个应用只允许有一个vertex-->
     <bean id="vertx" factory-bean="vertexFactory" factory-method="build"/>
     <bean id="vertexFactory" class="com.bullet.sweet.daedalus.kern.VertxFactory"/>
+
+
+    <bean id="wechatApi" class="com.bullet.sweet.daedalus.kern.WechatApi">
+        <property name="httpClient" ref="httpClient"/>
+    </bean>
 </beans>

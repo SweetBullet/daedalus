@@ -17,7 +17,6 @@
 
     <properties>
         <spring.version>3.2.13.RELEASE</spring.version>
-        <!--<bootstrap.version>3.0.1-RELEASE</bootstrap.version>-->
         <dom4j.version>1.6.1</dom4j.version>
         <vertx.version>3.3.0</vertx.version>
     </properties>

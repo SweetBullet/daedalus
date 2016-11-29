@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="gsonSerialization" class="com.bullet.sweet.daedalus.base.serialization.GsonSerialization"/>
+
+    <bean id="factoryBean" class="com.bullet.sweet.daedalus.base.http.HttpClientFactory"/>
+
+    <bean id="asyncHttpClientFactory" class="com.bullet.sweet.daedalus.base.http.AsyncHttpClientFactory"/>
+
+    <bean id="httpClient" factory-bean="factoryBean" factory-method="build"/>
+
+    <bean id="asyncHttpClient" factory-bean="asyncHttpClientFactory" factory-method="build"/>
+
+    <!--<bean id="gsonWithLowerCaseSerialization" class="com.bullet.sweet.daedalus.base.serialization.GsonSerialization">-->
+        <!--<constructor-arg value="LOWER_CASE_WITH_UNDERSCORES"/>-->
+    <!--</bean>-->
+
+
+</beans>
